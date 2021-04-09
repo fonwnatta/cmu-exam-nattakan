@@ -1,4 +1,4 @@
-# cmu-exam-nattakan
+
 # Angular CLI
 ## Project setup
 ```
