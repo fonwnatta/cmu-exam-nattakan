@@ -1,0 +1,111 @@
+<body class="bg-color">
+
+  <div id="body-page" class="container-fluid padding-map">
+    <div id="content-layer" class="position-float1">
+      <div >
+        <div id="result" class="result-bottom">
+          
+          <table class="table-adapt-strip result-bottom-table">
+           
+
+            <tbody>
+              <tr *ngFor="let info of results | paginate: { itemsPerPage: perPage, currentPage: cp } ">
+
+        
+                <td>
+                  <input type="checkbox"  value="{{info?.id}}">
+                </td>
+
+                <td >{{info?.title}}</td>
+                <td>{{info?.subTiile}}</td>
+                <td>{{info?.authors}}</td>
+                <td>{{info?.ISBN}}</td>
+                <td>
+                  {{info?.publicDate}}
+                </td>
+
+
+
+            </tbody>
+          </table>
+          <div id="container-fluid-foot" class="container-fluid contain-div">
+       
+            <div id="col-num-row" class="div-num-row col-xs-offset-10 col-xs-2">
+              <div id="number-thispage" class="num-row">{{(p.getCurrent()-1)*this.perPage +1}}/{{this.totalItem}}</div>
+            </div>
+          </div>
+
+          <pagination-template #p="paginationApi" (pageChange)="cp = $event">
+            <div id="col-number-page" class="col-xs-offset-3 col-xs-6">
+
+              <ul id="number-page" class="nav nav-pills multi-page">
+
+                <li *ngFor="let page of p.pages" class="multi" [class.current]="p.getCurrent() === page.value">
+                  <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                    <span>{{ page.label }}</span>
+                  </a>
+                  <a *ngIf="p.getCurrent() === page.value">
+                    <span>{{ page.label }}</span>
+                  </a>
+
+                </li>
+              </ul>
+            </div>
+            <div id="movepage" class="move-page-button container-fluid">
+              <div id="col-backbutton2" class="col-xs-1 col-xs-offset-3 back-button2">
+                <a *ngIf="!p.isFirstPage()" (click)="p.setCurrent(0)">
+                    <span class="btn backward-button2 glyphicon glyphicon-step-backward"></span>
+                </a>
+              </div>
+
+              <div id="col-backbutton1" class="col-xs-1 back-button1">
+                <a *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                    <span class="btn triangle-button glyphicon glyphicon-triangle-left"></span>
+               
+                </a>
+              </div>
+
+              <div id="col-thispage" class="col-xs-2" style="padding-right: 3px">
+                <div id="this-page" class="this-page">{{p.getCurrent()}}</div>
+              </div>
+              <div id="col-forwardbutton1" class="col-xs-1 for-button1">
+                <a *ngIf="!p.isLastPage()" (click)="p.next()">
+                    <span class="btn triangle-button glyphicon glyphicon-triangle-right"></span>
+                
+                </a>
+              </div>
+              <div id="col-forwardbutton2" class="col-xs-1 for-button2">
+                <a *ngIf="!p.isLastPage()" (click)="p.setCurrent(p.getLastPage())">
+                    <span class="btn backward-button2 glyphicon glyphicon-step-forward"></span>
+                  <!-- <input type="image" class="btn backward-button2" src="assets/img/forward2.png"> -->
+
+                </a>
+              </div>
+            </div>
+            <div id="back-button" class="margin-center">
+              <button (click)="toSearch()" type="image" class="btn btn-secondary"> BACK </button>
+
+            </div>
+            <div id="camera-button">
+              <button type="button" class=" btn btn-success" (click)="onCreateClicked();"> Add to Cart </button>
+
+            </div>
+
+            <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+
+            </div>
+            <!-- old code -->
+
+
+            <div class="pagination-next" [class.disabled]="p.isLastPage()">
+
+            </div>
+          </pagination-template>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>

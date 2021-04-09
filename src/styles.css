@@ -1,0 +1,86 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.bg-color{
+	background: linear-gradient(to top right, #223f2f 10%, #667f6b 65%, #75a699 80%,#3ab0b1 100%);
+    background-attachment: fixed;
+} */
+/*กำหนดfontจากไฟล์ด้านนอก*/
+ @font-face {
+    font-family: 'NP Naipol All in One';
+
+    src: url('assets/fonts/NP-Naipol-All-in-One/NP-Naipol-All-in-One-Regular.eot'),
+    url('assets/fonts/NP-Naipol-All-in-One/NP-Naipol-All-in-One-Regular.ttf');
+}
+@font-face {
+    font-family: 'Acephimere';
+
+    src: url('assets/fonts/Acephimere/Acephimere.otf'),
+    url('assets/fonts/Acephimere/Acephimere.otf');
+}
+@font-face {
+  font-family: 'Migha-LightCNTR';
+
+  src: url('/assets/fonts/Migha Display/Normal/Migha-LightCNTR.otf'),
+  url('/assets/fonts/Migha Display/Normal/Migha-LightCNTR.otf');
+}
+@font-face {
+  font-family: 'Bros-Rover';
+
+  src: url('/assets/fonts/Bros Rover.ttf'),
+  url('/assets/fonts/Bros Rover.ttf');
+}
+
+@font-face {
+  font-family: 'Digatal-7';
+
+  src: url('/assets/fonts/Digital-7/digital-7.ttf'),
+  url('/assets/fonts/Digital-7/digital-7.ttf');
+}
+body {
+  font-family: 'Digatal-7';
+  min-width: 700px;
+}
+footer{
+	min-width: 700px;
+}
+header{
+	min-width: 700px;
+}
+
+.button-icon{
+	width: 60%;
+}
+.button-icon{
+	width: 45px;
+	height: 45px;
+}
+
+.padding-map{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+img.map-pic{
+	margin-left:  0px;
+	margin-right: 0px;
+	width: 100%;
+	max-height: 61em;
+	margin-top: 20px;
+	min-width: 1680px;
+}
+
+img.foot-logo{
+	max-height: 74px;
+	margin-left: 10px;
+}
+
+.margin-foot{
+	margin-top: 7px;
+}
+
+
+.block-icon{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
